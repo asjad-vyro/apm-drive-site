@@ -8,7 +8,6 @@ import { Ship } from "@/components/sections/Ship";
 import { Growth } from "@/components/sections/Growth";
 import { Mentions } from "@/components/sections/Mentions";
 import { How } from "@/components/sections/How";
-import { Team } from "@/components/sections/Team";
 import { Places } from "@/components/sections/Places";
 import { Fit } from "@/components/sections/Fit";
 import { ApplyForm } from "@/components/sections/ApplyForm";
@@ -32,7 +31,6 @@ export default function Page() {
         <Growth milestones={MILESTONES} />
         <Mentions mentions={MENTIONS} />
         <How />
-        <Team />
         <Places events={EVENTS} sfAddress={SF_ADDRESS} />
         <Fit />
         <ApplyForm />

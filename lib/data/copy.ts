@@ -42,20 +42,6 @@ export const HOW = {
   ],
 };
 
-export const TEAM = {
-  eyebrow: "Who you'll work with",
-  title: "The product and design team.",
-  body: "You will work directly with these people, in the same room.",
-  groups: [
-    { label: "Product", people: [
-      "Saad Ahmed", "Ali Ayub Khan", "Muhammad Usama", "Saif ur Rehman", "Mehdi",
-      "Muhammad Muzammil", "Ashad Qureshi", "Raamiz Khan Niazi", "Ahmed Hassan", "Hussain Asjad Abbas", "Taha Abid",
-    ]},
-    { label: "Design", people: [
-      "Aizaz Ahmad", "Hamza Jamal", "Tayyab Abbas", "Khadija Umer", "Syed Aman", "Faisal Khan",
-    ]},
-  ],
-};
 
 export const PLACES = {
   eyebrow: "Islamabad → San Francisco",

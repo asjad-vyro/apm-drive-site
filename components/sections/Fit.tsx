@@ -5,7 +5,7 @@ import { FIT } from "@/lib/data/copy";
 export function Fit() {
   return (
     <section id="fit" className="relative z-[1] py-10 md:py-16">
-      <Stamp className="container-page md:min-h-[calc(100vh-88px)] md:flex md:flex-col md:justify-center">
+      <Stamp className="container-page">
         <div className="t-mono text-ink-3">{FIT.eyebrow}</div>
         <div className="mt-6 md:mt-10 grid md:grid-cols-2 gap-10 md:gap-16">
           <div>

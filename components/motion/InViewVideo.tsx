@@ -4,8 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { reducedMotion } from "./gsap";
 
 /**
- * Poster first; the muted loop loads and plays only while the card is on
- * screen (and never under reduced motion). Keeps the page light on phones.
+ * Poster first. On pointer devices the clip plays only while hovered; on
+ * touch it plays while mostly on screen. Only one clip decodes at a time in
+ * practice, which keeps scrolling smooth.
  */
 export function InViewVideo({ poster, src, alt, className = "" }: { poster: string; src?: string; alt: string; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,22 +17,29 @@ export function InViewVideo({ poster, src, alt, className = "" }: { poster: stri
   useEffect(() => {
     if (!src || reducedMotion()) return;
     const el = ref.current; if (!el) return;
+    const card = el.closest("a") ?? el;
+    if (window.matchMedia("(pointer: fine)").matches) {
+      const on = () => { setArmed(true); requestAnimationFrame(() => vid.current?.play().catch(() => {})); };
+      const off = () => { vid.current?.pause(); setPlaying(false); };
+      card.addEventListener("mouseenter", on); card.addEventListener("mouseleave", off);
+      return () => { card.removeEventListener("mouseenter", on); card.removeEventListener("mouseleave", off); };
+    }
     const io = new IntersectionObserver(([e]) => {
       if (e.isIntersecting) { setArmed(true); vid.current?.play().catch(() => {}); }
-      else vid.current?.pause();
-    }, { threshold: 0.35 });
+      else { vid.current?.pause(); setPlaying(false); }
+    }, { threshold: 0.75 });
     io.observe(el);
     return () => io.disconnect();
   }, [src]);
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
-      <img src={poster} alt={alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={poster} alt={alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
       {src && armed && (
         <video
           ref={vid} src={src} muted loop playsInline autoPlay preload="metadata" aria-hidden="true"
           onPlaying={() => setPlaying(true)}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
           style={{ opacity: playing ? 1 : 0 }}
         />
       )}

@@ -1,7 +1,6 @@
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { FaqSection } from "@/components/FaqSection";
-import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { LineSystem } from "@/components/motion/LineSystem";
 import { Hero } from "@/components/sections/Hero";
 import { Receipts } from "@/components/sections/Receipts";
@@ -12,7 +11,6 @@ import { How } from "@/components/sections/How";
 import { Team } from "@/components/sections/Team";
 import { Places } from "@/components/sections/Places";
 import { Fit } from "@/components/sections/Fit";
-import { Process } from "@/components/sections/Process";
 import { ApplyForm } from "@/components/sections/ApplyForm";
 import { FAQ } from "@/lib/data/copy";
 import { RECEIPTS, MENTIONS, MILESTONES, EVENTS, SF_ADDRESS } from "@/lib/data/facts";
@@ -25,7 +23,6 @@ import { SURFACES, HERO_IMAGE, HERO_VIDEO } from "@/lib/data/assets";
 export default function Page() {
   return (
     <>
-      <SmoothScroll />
       <SiteNav />
       <main id="page-root" className="relative">
         <LineSystem rootId="page-root" />
@@ -38,7 +35,6 @@ export default function Page() {
         <Team />
         <Places events={EVENTS} sfAddress={SF_ADDRESS} />
         <Fit />
-        <Process />
         <ApplyForm />
         <FaqSection items={FAQ} />
       </main>

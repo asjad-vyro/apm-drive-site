@@ -19,6 +19,15 @@ export function GenerateReveal({
   const [done, setDone] = useState(false);     // animation finished → show <img>
   const [armed, setArmed] = useState(trigger === "now");
   const [vidOn, setVidOn] = useState(false);
+  const vidRef = useRef<HTMLVideoElement>(null);
+
+  // Pause the loop whenever it is off screen so it stops costing frames.
+  useEffect(() => {
+    const el = wrapRef.current; if (!el || !video) return;
+    const io = new IntersectionObserver(([e]) => { const v = vidRef.current; if (!v) return; if (e.isIntersecting) v.play().catch(() => {}); else v.pause(); });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [video, done]);
 
   useEffect(() => {
     if (trigger !== "view") return;
@@ -87,7 +96,7 @@ export function GenerateReveal({
         style={{ opacity: done ? 1 : 0, transition: "opacity 320ms ease", objectPosition: `${focusX * 100}% 50%` }}
       />
       {video && done && !reducedMotion() && (
-        <video src={video} muted loop playsInline autoPlay preload="auto" aria-hidden="true" onPlaying={() => setVidOn(true)}
+        <video ref={vidRef} src={video} muted loop playsInline autoPlay preload="auto" aria-hidden="true" onPlaying={() => setVidOn(true)}
           className="absolute inset-0 w-full h-full object-cover" style={{ opacity: vidOn ? 1 : 0, transition: "opacity 700ms ease", objectPosition: `${focusX * 100}% 50%` }} />
       )}
       {!ready && !done && <div className="absolute inset-0 bg-paper-2" aria-hidden="true" />}

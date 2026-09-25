@@ -20,7 +20,6 @@ export function Hero({ image, video }: { image: string; video?: string }) {
           <p className="t-lead text-ink-2 m-0">{HERO.sub}</p>
           <div className="flex flex-wrap gap-3 md:justify-end">
             <a href={SITE.applyAnchor} className="inline-flex items-center justify-center h-12 px-6 rounded-[24px] bg-ink text-paper font-medium text-[15px] transition-transform hover:-translate-y-px">{HERO.primary}</a>
-            <a href="#process" className="inline-flex items-center justify-center h-12 px-6 rounded-[24px] border border-line-2 text-ink font-medium text-[15px] hover:bg-ink/5 transition-colors">{HERO.secondary}</a>
           </div>
         </div>
 
@@ -36,7 +35,6 @@ export function Hero({ image, video }: { image: string; video?: string }) {
             duration={1700}
             className="w-full aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] rounded-[20px] md:rounded-[28px] bg-paper-2"
           />
-          <div className="grain rounded-[20px] md:rounded-[28px]" aria-hidden="true" />
           <p className="mt-3 text-[13px] text-ink-3 m-0">{HERO.madeWith}</p>
           <span data-line="hero-frame" data-line-x="left" data-line-y="bottom" className="absolute left-[8px] md:left-[10px] bottom-0 w-1 h-1" aria-hidden="true" />
         </div>

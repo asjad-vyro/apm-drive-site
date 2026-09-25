@@ -91,11 +91,15 @@ export function LineSystem({ rootId = "page-root" }: { rootId?: string }) {
         return best;
       });
       path.style.strokeDasharray = `${total}`;
+      lastShown = -1;
       render();
     };
 
+    let lastShown = -1;
     const render = () => {
       const shown = reduced ? total : total * progress;
+      if (Math.abs(shown - lastShown) < 0.5) return;
+      lastShown = shown;
       path.style.strokeDashoffset = `${total - shown}`;
       const q = path.getPointAtLength(Math.max(0, Math.min(total, shown)));
       dot.setAttribute("cx", q.x.toFixed(1)); dot.setAttribute("cy", q.y.toFixed(1));
@@ -115,16 +119,22 @@ export function LineSystem({ rootId = "page-root" }: { rootId?: string }) {
         trigger: root,
         start: "top 55%",
         end: "bottom 70%",
-        scrub: 0.7,
+        scrub: 0.25,
         onUpdate: (self) => { progress = self.progress; render(); },
       });
     };
 
     // Fonts and images change layout after first paint; rebuild on settle.
     build();
-    const ro = new ResizeObserver(() => { measure(); ScrollTrigger.refresh(); });
+    let lastH = root.scrollHeight, t: number | undefined;
+    const ro = new ResizeObserver(() => {
+      if (Math.abs(root.scrollHeight - lastH) < 4) return;
+      lastH = root.scrollHeight;
+      window.clearTimeout(t);
+      t = window.setTimeout(() => { lastShown = -1; measure(); ScrollTrigger.refresh(); }, 150);
+    });
     ro.observe(root);
-    const onLoad = () => { measure(); ScrollTrigger.refresh(); };
+    const onLoad = () => { lastShown = -1; measure(); ScrollTrigger.refresh(); };
     window.addEventListener("load", onLoad);
     document.fonts?.ready.then(onLoad);
     const onResize = () => build();

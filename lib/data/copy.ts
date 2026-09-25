@@ -4,7 +4,6 @@ export const HERO = {
   h1b: "In your first year.",
   sub: "ImagineArt is hiring Associate Product Managers in Islamabad, for final-year students and recent graduates. You will own part of the product, ship it to real users, and be judged on what happens next.",
   primary: "Apply now",
-  secondary: "How hiring works",
   imageAlt: "A frame generated with ImagineArt",
   madeWith: "Made with ImagineArt, from the imagine.art homepage.",
 };
@@ -88,20 +87,6 @@ export const FIT = {
   ],
 };
 
-export const PROCESS = {
-  eyebrow: "How hiring works",
-  title: "Six steps. No tricks.",
-  sla: "You hear back within two weeks of applying, either way.",
-  steps: [
-    { n: "01", t: "Apply", d: "Five minutes", b: "One form, one link to something you made. No cover letter." },
-    { n: "02", t: "Meet us", d: "On campus or on a call", b: "Meet the team, see the product, ask anything." },
-    { n: "03", t: "First interview", d: "30 minutes", b: "A conversation with the product team about what you have built and why you made the choices you made." },
-    { n: "04", t: "Product case day", d: "Half a day, in Islamabad", b: "A real problem from the product, worked with a designer at the table. We look at how you think, not how you present." },
-    { n: "05", t: "Final conversation", d: "45 minutes", b: "With product leadership and the founders. Come with opinions about ImagineArt." },
-    { n: "06", t: "Offer", d: "Within days", b: "Number, start date, and who you will sit next to." },
-  ],
-  datesNote: "Campus visit dates will be posted on this page.",
-};
 
 export const APPLY = {
   eyebrow: "Apply",

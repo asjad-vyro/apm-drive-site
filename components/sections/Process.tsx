@@ -25,10 +25,9 @@ export function Process() {
             </li>
           ))}
         </ol>
-        <div className="mt-10 md:mt-14 flex flex-wrap items-center gap-2">
-          {PROCESS.campuses.map((c) => (<span key={c} className="chip">{c}</span>))}
-          <span className="text-[13px] text-ink-3 ml-1">{PROCESS.datesNote}</span>
-        </div>
+        <p className="mt-10 md:mt-14 text-[15px] leading-[1.5] text-ink-2 m-0 max-w-[60ch]">
+          {PROCESS.datesNote}
+        </p>
       </div>
     </section>
   );

@@ -1,24 +1,13 @@
 "use client";
-import { useState } from "react";
-import { Typewriter } from "@/components/motion/Typewriter";
 import { GenerateReveal } from "@/components/motion/GenerateReveal";
 import { HERO } from "@/lib/data/copy";
 import { SITE } from "@/lib/site";
 
 export function Hero({ image, video }: { image: string; video?: string }) {
-  const [typed, setTyped] = useState(false);
   return (
     <section id="top" className="relative z-[1] pt-[132px] md:pt-[168px] pb-10 md:pb-16">
       <div className="container-page">
-        <div className="chip" aria-label="Prompt">
-          <span className="chip-dot" aria-hidden="true" />
-          <span className="normal-case tracking-normal text-[12px] md:text-[13px]">
-            <span className="text-ink-4">prompt / </span>
-            <Typewriter text={HERO.prompt} startDelay={420} onDone={() => setTyped(true)} />
-          </span>
-        </div>
-
-        <h1 className="t-display mt-7 md:mt-9 max-w-[14ch] text-ink">
+        <h1 className="t-display max-w-[14ch] text-ink">
           <span className="block">{HERO.h1a}</span>
           <span className="block relative">
             {HERO.h1b}
@@ -42,15 +31,13 @@ export function Hero({ image, video }: { image: string; video?: string }) {
             focusX={0.72}
             alt={HERO.imageAlt}
             trigger="now"
-            start={typed}
+            start
             priority
             duration={1700}
             className="w-full aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] rounded-[20px] md:rounded-[28px] bg-paper-2"
           />
           <div className="grain rounded-[20px] md:rounded-[28px]" aria-hidden="true" />
-          <span className="chip absolute left-4 bottom-4 md:left-6 md:bottom-6 bg-paper/80 backdrop-blur">
-            <span className="chip-dot" aria-hidden="true" />{HERO.madeWith}
-          </span>
+          <p className="mt-3 text-[13px] text-ink-3 m-0">{HERO.madeWith}</p>
           <span data-line="hero-frame" data-line-x="left" data-line-y="bottom" className="absolute left-[8px] md:left-[10px] bottom-0 w-1 h-1" aria-hidden="true" />
         </div>
       </div>

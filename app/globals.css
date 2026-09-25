@@ -73,14 +73,6 @@
   .t-mono { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
   .t-num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
 
-  .chip {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 10px; border-radius: 999px;
-    border: 1px solid var(--color-line-2); background: rgb(255 255 255 / 0.6);
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--color-ink-2);
-  }
-  .chip-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--color-signal); }
 
   .hairline { border-top: 1px solid var(--color-line); }
 
@@ -119,9 +111,6 @@
 
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes mobileMenuIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes caret { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-.caret { display: inline-block; width: 2px; height: 1em; background: var(--color-ink); margin-left: 2px; vertical-align: -0.15em; animation: caret 1s steps(1) infinite; }
-@media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
 
 /* The line itself */
 .line-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: visible; }

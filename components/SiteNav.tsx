@@ -9,7 +9,7 @@ function Wordmark() {
       <img src="/assets/imagine-logo.svg" alt="ImagineArt" className="w-[26px] h-[26px] rounded-[8px] shrink-0" />
       <span className="font-display font-semibold text-[19px] tracking-[-0.4px] text-ink">ImagineArt</span>
       <span aria-hidden="true" className="w-px h-[18px] bg-line-2" />
-      <span className="font-display font-medium text-[17px] tracking-[-0.3px] text-ink-3">APM Drive</span>
+      <span className="font-display font-medium text-[17px] tracking-[-0.3px] text-ink-3">Careers</span>
     </span>
   );
 }
@@ -47,7 +47,7 @@ export function SiteNav() {
             transition: "max-width 0.48s cubic-bezier(0.22,1,0.36,1), padding 0.48s cubic-bezier(0.22,1,0.36,1), background 0.48s cubic-bezier(0.22,1,0.36,1), box-shadow 0.48s cubic-bezier(0.22,1,0.36,1), border-color 0.48s",
           }}
         >
-          <a href="#top" className="inline-flex items-center shrink-0" aria-label="ImagineArt APM Drive, back to top">
+          <a href="#top" className="inline-flex items-center shrink-0" aria-label="ImagineArt Careers, back to top">
             <Wordmark />
           </a>
 

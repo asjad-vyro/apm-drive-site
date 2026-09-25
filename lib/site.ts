@@ -1,8 +1,8 @@
 /** Single source of truth for URLs and identity strings. */
 export const SITE = {
-  title: "APM Drive 2026 | ImagineArt",
+  title: "Associate Product Manager | ImagineArt Careers",
   description:
-    "ImagineArt is hiring a batch of Associate Product Managers in Islamabad. Fresh graduates and people within a year of graduating, from FAST, LUMS and NUST. Own a product used by millions in your first year.",
+    "ImagineArt is hiring Associate Product Managers in Islamabad, for final-year students and recent graduates. Own a product used by millions in your first year.",
   // TODO(deploy): replace with the production host once the domain is decided.
   url: "https://apm-drive-site.vercel.app",
   imagineArt: "https://www.imagine.art",

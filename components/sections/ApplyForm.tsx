@@ -37,29 +37,23 @@ export function ApplyForm() {
 
           {state === "ok" ? (
             <div className="rounded-[20px] bg-white border border-line p-8 md:p-10">
-              <div className="chip"><span className="chip-dot" aria-hidden="true" />done</div>
-              <p className="t-h3 mt-5 text-ink m-0">{APPLY.success}</p>
+              <p className="t-h3 text-ink m-0">{APPLY.success}</p>
             </div>
           ) : (
             <form onSubmit={onSubmit} className="rounded-[20px] bg-paper-2/60 border border-line p-5 md:p-8 flex flex-col gap-5">
-              <div className="chip w-max"><span className="chip-dot" aria-hidden="true" />prompt / application</div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div><label className={label} htmlFor="name">Name</label><input id="name" name="name" required className={field} placeholder="Your name" {...NO_PWD} /></div>
-                <div><label className={label} htmlFor="email">Email</label><input id="email" name="email" type="email" required className={field} placeholder="you@university.edu.pk" {...NO_PWD} /></div>
+                <div><label className={label} htmlFor="email">Email</label><input id="email" name="email" type="email" required className={field} placeholder="you@example.com" {...NO_PWD} /></div>
               </div>
               <div className="grid sm:grid-cols-3 gap-4">
                 <div><label className={label} htmlFor="university">University</label>
-                  <select id="university" name="university" required className={field} defaultValue="">
-                    <option value="" disabled>Choose</option>{APPLY.universities.map((u) => <option key={u} value={u}>{u}</option>)}
-                  </select></div>
+                  <input id="university" name="university" required className={field} placeholder="University" {...NO_PWD} /></div>
                 <div><label className={label} htmlFor="graduation">Graduation</label>
                   <select id="graduation" name="graduation" required className={field} defaultValue="">
                     <option value="" disabled>Year</option>{APPLY.years.map((y) => <option key={y} value={y}>{y}</option>)}
                   </select></div>
                 <div><label className={label} htmlFor="city">City</label>
-                  <select id="city" name="city" required className={field} defaultValue="">
-                    <option value="" disabled>Choose</option>{APPLY.cities.map((c) => <option key={c} value={c}>{c}</option>)}
-                  </select></div>
+                  <input id="city" name="city" required className={field} placeholder="City" {...NO_PWD} /></div>
               </div>
               <div><label className={label} htmlFor="link">A link to something you built or made</label><input id="link" name="link" type="url" required className={field} placeholder="https://" {...NO_PWD} /></div>
               <div><label className={label} htmlFor="shipped">One thing you shipped, in two sentences</label>

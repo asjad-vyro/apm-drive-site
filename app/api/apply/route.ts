@@ -33,7 +33,7 @@ export async function POST(req: Request) {
   const webhook = process.env.APPLY_WEBHOOK_URL;
   if (webhook) {
     const text = [
-      `*APM drive application* — ${app.name} (${app.university}, ${app.graduation}, ${app.city})`,
+      `*APM application* — ${app.name} (${app.university}, ${app.graduation}, ${app.city})`,
       `Email: ${app.email}${app.handle ? ` · ${app.handle}` : ""}`,
       `Link: ${app.link}`,
       `Shipped: ${app.shipped}`,

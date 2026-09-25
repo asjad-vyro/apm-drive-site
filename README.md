@@ -47,7 +47,7 @@ Rules from the kit's `references/claims.md` apply. Specifically on this page:
 1. **Compensation.** The page says "we say the number in the first conversation". Confirm that is the policy, or replace with a band.
 2. **The SF opportunity.** The page says it is a chance, earned, not scheduled. Confirm the actual terms.
 3. **In-person.** The page says the product team works from the Islamabad office and the role is in person. Confirm.
-4. **Process and the two-week promise.** Steps and durations in `PROCESS` are a proposal: apply → campus drive → APM screen (30 min) → product case day (half day, Islamabad) → Group PM + founders (45 min) → offer. Confirm, and confirm the team will honour "you hear back within two weeks".
+4. **Process and the two-week promise.** Steps and durations in `PROCESS` are a proposal: apply → meet us (campus or call) → first interview (30 min) → product case day (half day, Islamabad) → final conversation with product leadership and founders (45 min) → offer. Confirm, and confirm the team will honour "you hear back within two weeks".
 5. **Ladder definitions and the six "how product works" lines.** Written to reflect the org as observed; Saad should edit.
 6. **Campus dates.** `PROCESS.datesNote` promises dates on this page first. Add them when set.
 7. **Application delivery.** Set `APPLY_WEBHOOK_URL` (Slack incoming webhook to a channel such as `#apm-applications`) or provision Vercel Blob. Until one is set the form returns a 503 and shows the failure line.
@@ -65,3 +65,7 @@ pnpm build
 ```
 
 Verification done on 2026-09-25: scrolling screenshots at 1440 and 390, zero broken images, no console errors, production build clean.
+
+## Candidate-facing copy rule
+
+The page is public. It never names target universities or cities, never says "batch" or "drive", never names internal screeners or internal titles, and never describes internal sourcing. The team section lists names only, grouped Product and Design. The role title appears once in the hero and once on the career curve.

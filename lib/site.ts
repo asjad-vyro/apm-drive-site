@@ -8,7 +8,7 @@ export const SITE = {
   imagineArt: "https://www.imagine.art",
   ashbyBoard: "https://jobs.ashbyhq.com/imagineart",
   /** Public Ashby sourcing form. Cannot be iframed (X-Frame-Options: DENY), so every Apply opens it in a new tab. */
-  applyUrl: "https://jobs.ashbyhq.com/imagineart/form/5f77898f-59e7-4fc3-a25b-4e3551e66e4a",
+  applyUrl: "https://jobs.ashbyhq.com/imagineart/form/ap-ms-drive",
 } as const;
 
 export const NAV_LINKS = [

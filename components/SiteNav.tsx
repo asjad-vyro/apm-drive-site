@@ -58,7 +58,7 @@ export function SiteNav() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <a href={SITE.applyAnchor} className="inline-flex items-center justify-center h-[38px] px-[20px] rounded-[22px] font-sans text-[14px] font-medium bg-ink text-paper transition-transform duration-200 hover:-translate-y-px">
+            <a href={SITE.applyUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-[38px] px-[20px] rounded-[22px] font-sans text-[14px] font-medium bg-ink text-paper transition-transform duration-200 hover:-translate-y-px">
               Apply
             </a>
           </div>
@@ -87,7 +87,7 @@ export function SiteNav() {
               ))}
             </div>
             <div className="w-[calc(100%-48px)] h-px bg-line my-4" />
-            <a href={SITE.applyAnchor} onClick={() => setMenuOpen(false)} className="bg-ink text-paper inline-flex items-center justify-center h-11 px-6 rounded-[22px] font-sans text-[14px] font-medium">Apply</a>
+            <a href={SITE.applyUrl} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="bg-ink text-paper inline-flex items-center justify-center h-11 px-6 rounded-[22px] font-sans text-[14px] font-medium">Apply</a>
           </div>
         </div>
       )}

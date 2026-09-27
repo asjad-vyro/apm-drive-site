@@ -19,7 +19,7 @@ export function Hero({ image, video }: { image: string; video?: string }) {
         <div className="mt-8 md:mt-10 grid md:grid-cols-[minmax(0,58ch)_auto] gap-6 md:gap-10 items-end">
           <p className="t-lead text-ink-2 m-0">{HERO.sub}</p>
           <div className="flex flex-wrap gap-3 md:justify-end">
-            <a href={SITE.applyAnchor} className="inline-flex items-center justify-center h-12 px-6 rounded-[24px] bg-ink text-paper font-medium text-[15px] transition-transform hover:-translate-y-px">{HERO.primary}</a>
+            <a href={SITE.applyUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-12 px-6 rounded-[24px] bg-ink text-paper font-medium text-[15px] transition-transform hover:-translate-y-px">{HERO.primary}</a>
           </div>
         </div>
 

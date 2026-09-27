@@ -77,11 +77,8 @@ export const FIT = {
 export const APPLY = {
   eyebrow: "Apply",
   title: "Apply now.",
-  body: "Five fields and one link. The link is what we read most closely.",
-  submit: "Submit application",
-  years: ["2025", "2026", "2027"],
-  success: "Received. You will hear from us within two weeks.",
-  failure: "Something went wrong on our side. Email your application to careers@imagine.art.",
+  body: "The application takes about five minutes. Include a link to something you built or made; it is what we read most closely.",
+  button: "Open the application",
 };
 
 export const FAQ = [
@@ -93,5 +90,5 @@ export const FAQ = [
   { q: "How long does the process take?", a: "You hear back within two weeks of applying. From first conversation to offer is usually a few weeks." },
   { q: "Do I need a computer science degree?", a: "No. You need to have built or shipped something, and to be able to explain why you made the choices you made." },
   { q: "Can I use AI to prepare my application?", a: "Yes, and we will ask you how. We build AI products; we would be surprised if you didn't." },
-  { q: "What happens with my application data?", a: "It is read by the product team for this hiring round only and is not shared outside the company." },
+  { q: "Where do I apply?", a: "Through the application form linked on this page. It opens on Ashby, the system we use for hiring." },
 ];

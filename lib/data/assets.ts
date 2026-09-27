@@ -7,6 +7,15 @@ import type { Surface } from "@/components/sections/Ship";
 export const HERO_IMAGE = "/assets/hero/hero.webp";   // frame of the imagine.art homepage hero loop
 export const HERO_VIDEO = "/assets/hero/hero.mp4";    // same loop, 1600w, silent
 
+/** Vyro's own San Francisco shoots (Imagine Computer, MCP and giveaway footage), graded from Sony FX6 log. */
+export const SF_PHOTOS = {
+  main: { src: "/assets/sf/golden-gate.webp", alt: "Members of the Vyro team in front of the Golden Gate Bridge" },
+  side: [
+    { src: "/assets/sf/office.webp", alt: "Vyro's San Francisco office" },
+    { src: "/assets/sf/office-window.webp", alt: "Working at a window desk in the San Francisco office" },
+  ],
+};
+
 const IA = "https://www.imagine.art";
 export const SURFACES: Surface[] = [
   { name: "Image", blurb: "Text to image across 50+ models, including ImagineArt's own.", image: "/assets/ship/image.webp", video: "/assets/ship/image.mp4", alt: "A montage of images generated in ImagineArt", href: `${IA}/ai-image-generator` },

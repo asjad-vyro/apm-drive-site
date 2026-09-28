@@ -48,18 +48,22 @@ export function Places({ events, sfAddress }: { events: Event[]; sfAddress: stri
         </div>
 
         <figure className="m-0 mt-12 md:mt-16">
-          <div className="grid md:grid-cols-[2fr_1fr] gap-3 md:gap-4">
-            <Reveal className="h-full">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4">
+            <Reveal className="col-span-2 md:col-span-4 md:row-span-2 h-full">
               <InViewVideo poster={SF_PHOTOS.main.src} src={SF_PHOTOS.main.video} alt={SF_PHOTOS.main.alt} autoplay className="w-full h-full aspect-[16/10] md:aspect-auto md:min-h-[100%] rounded-[18px] bg-paper-2" />
             </Reveal>
-            <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
-              {SF_PHOTOS.side.map((p, i) => (
-                <Reveal key={p.src} delay={80 + i * 60}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="w-full aspect-[16/10] object-cover rounded-[18px] bg-paper-2" />
-                </Reveal>
-              ))}
-            </div>
+            {SF_PHOTOS.side.map((p, i) => (
+              <Reveal key={p.src} delay={80 + i * 60} className="md:col-span-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="w-full aspect-[16/10] object-cover rounded-[18px] bg-paper-2" />
+              </Reveal>
+            ))}
+            {SF_PHOTOS.bottom.map((p, i) => (
+              <Reveal key={p.src} delay={200 + i * 60} className="md:col-span-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="w-full aspect-[16/10] md:aspect-[16/9] object-cover rounded-[18px] bg-paper-2" />
+              </Reveal>
+            ))}
           </div>
           <figcaption className="mt-3 text-[13px] text-ink-3">The San Francisco office, and the team around the city.</figcaption>
         </figure>

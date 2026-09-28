@@ -13,7 +13,7 @@ import { Fit } from "@/components/sections/Fit";
 import { ApplyForm } from "@/components/sections/ApplyForm";
 import { FAQ } from "@/lib/data/copy";
 import { RECEIPTS, MENTIONS, MILESTONES, EVENTS, SF_ADDRESS } from "@/lib/data/facts";
-import { SURFACES, HERO_IMAGE, HERO_VIDEO, LIFE_A, LIFE_B } from "@/lib/data/assets";
+import { SURFACES, HERO_IMAGE, HERO_VIDEO, LIFE_A } from "@/lib/data/assets";
 import { PhotoStrip } from "@/components/sections/PhotoStrip";
 
 /**
@@ -33,7 +33,6 @@ export default function Page() {
         <PhotoStrip photos={LIFE_A} />
         <Mentions mentions={MENTIONS} />
         <How />
-        <PhotoStrip photos={LIFE_B} reverse caption="The team in San Francisco." />
         <Places events={EVENTS} sfAddress={SF_ADDRESS} />
         <Fit />
         <ApplyForm />

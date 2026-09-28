@@ -6,13 +6,13 @@ export type StripPhoto = { src: string; alt: string; w: number; h: number };
  * animation (compositor only), so it costs nothing on scroll. Pauses on
  * hover and under reduced motion.
  */
-export function PhotoStrip({ photos, caption, reverse = false }: { photos: StripPhoto[]; caption?: string; reverse?: boolean }) {
+export function PhotoStrip({ photos, caption }: { photos: StripPhoto[]; caption?: string }) {
   if (photos.length === 0) return null;
   const row = [...photos, ...photos];
   return (
     <section aria-label={caption ?? "Photos"} className="relative z-[1] py-10 md:py-14 overflow-hidden">
       <div className="group">
-        <div className="flex w-max gap-3 md:gap-4 animate-marquee group-hover:[animation-play-state:paused]" style={{ animationDuration: `${photos.length * 7}s`, animationDirection: reverse ? "reverse" : "normal" }}>
+        <div className="flex w-max gap-3 md:gap-4 animate-marquee group-hover:[animation-play-state:paused]" style={{ animationDuration: `${photos.length * 7}s` }}>
           {row.map((p, i) => (
             <img
               key={`${p.src}-${i}`}

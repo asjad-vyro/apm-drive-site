@@ -15,26 +15,22 @@ export const SF_PHOTOS = {
     { src: "/assets/sf/office.webp", alt: "Vyro's San Francisco office" },
     { src: "/assets/sf/office-window.webp", alt: "Working at a window desk in the San Francisco office" },
   ],
+  bottom: [
+    { src: "/assets/life/c1531.webp", alt: "Working on a laptop under a tree in a San Francisco park" },
+    { src: "/assets/life/c1530.webp", alt: "At the Palace of Fine Arts" },
+  ],
 };
 
 const ph = (id: string, alt: string): StripPhoto => ({ src: `/assets/life/${id}.webp`, alt, w: 960, h: 540 });
 
-/** Candid frames from the same San Francisco shoots, split across two drifting strips. */
+/** Candid frames from the same San Francisco shoots, in one drifting strip. */
 export const LIFE_A: StripPhoto[] = [
-  ph("c1494", "The team walking at the Golden Gate overlook"),
   ph("c1910", "Working at a window desk in the San Francisco office"),
-  ph("c1531", "Working on a laptop under a tree in a San Francisco park"),
+  ph("c1534", "A San Francisco park on a clear day"),
+  ph("c1912", "Hands on a laptop in the office"),
   ph("c1519", "The lagoon at the Palace of Fine Arts"),
   ph("c1919", "At a desk in the San Francisco office"),
   ph("c1746", "Downtown San Francisco"),
-];
-export const LIFE_B: StripPhoto[] = [
-  ph("c1496", "Talking through an idea at the Golden Gate"),
-  ph("c1912", "Hands on a laptop in the office"),
-  ph("c1534", "A San Francisco park on a clear day"),
-  ph("c1530", "Filming at the Palace of Fine Arts"),
-  ph("c1505", "Above the Golden Gate Bridge"),
-  ph("c1948", "Crossing the street near the office"),
 ];
 
 const IA = "https://www.imagine.art";

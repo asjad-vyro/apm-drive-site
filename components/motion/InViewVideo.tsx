@@ -8,7 +8,7 @@ import { reducedMotion } from "./gsap";
  * touch it plays while mostly on screen. Only one clip decodes at a time in
  * practice, which keeps scrolling smooth.
  */
-export function InViewVideo({ poster, src, alt, className = "" }: { poster: string; src?: string; alt: string; className?: string }) {
+export function InViewVideo({ poster, src, alt, className = "", autoplay = false }: { poster: string; src?: string; alt: string; className?: string; autoplay?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const vid = useRef<HTMLVideoElement>(null);
   const [armed, setArmed] = useState(false);
@@ -18,7 +18,7 @@ export function InViewVideo({ poster, src, alt, className = "" }: { poster: stri
     if (!src || reducedMotion()) return;
     const el = ref.current; if (!el) return;
     const card = el.closest("a") ?? el;
-    if (window.matchMedia("(pointer: fine)").matches) {
+    if (!autoplay && window.matchMedia("(pointer: fine)").matches) {
       const on = () => { setArmed(true); requestAnimationFrame(() => vid.current?.play().catch(() => {})); };
       const off = () => { vid.current?.pause(); setPlaying(false); };
       card.addEventListener("mouseenter", on); card.addEventListener("mouseleave", off);
@@ -27,10 +27,10 @@ export function InViewVideo({ poster, src, alt, className = "" }: { poster: stri
     const io = new IntersectionObserver(([e]) => {
       if (e.isIntersecting) { setArmed(true); vid.current?.play().catch(() => {}); }
       else { vid.current?.pause(); setPlaying(false); }
-    }, { threshold: 0.75 });
+    }, { threshold: autoplay ? 0.35 : 0.75 });
     io.observe(el);
     return () => io.disconnect();
-  }, [src]);
+  }, [src, autoplay]);
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>

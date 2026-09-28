@@ -1,4 +1,5 @@
 import type { Surface } from "@/components/sections/Ship";
+import type { StripPhoto } from "@/components/sections/PhotoStrip";
 /**
  * All media is ImagineArt's own published showcase output, re-encoded for the
  * web. Source page for each is noted; originals and a manifest are in the
@@ -9,12 +10,32 @@ export const HERO_VIDEO = "/assets/hero/hero.mp4";    // same loop, 1600w, silen
 
 /** Vyro's own San Francisco shoots (Imagine Computer, MCP and giveaway footage), graded from Sony FX6 log. */
 export const SF_PHOTOS = {
-  main: { src: "/assets/sf/golden-gate.webp", alt: "Members of the Vyro team in front of the Golden Gate Bridge" },
+  main: { src: "/assets/sf/golden-gate-walk.webp", video: "/assets/sf/golden-gate-walk.mp4", alt: "Members of the Vyro team walking by the Golden Gate Bridge" },
   side: [
     { src: "/assets/sf/office.webp", alt: "Vyro's San Francisco office" },
     { src: "/assets/sf/office-window.webp", alt: "Working at a window desk in the San Francisco office" },
   ],
 };
+
+const ph = (id: string, alt: string): StripPhoto => ({ src: `/assets/life/${id}.webp`, alt, w: 960, h: 540 });
+
+/** Candid frames from the same San Francisco shoots, split across two drifting strips. */
+export const LIFE_A: StripPhoto[] = [
+  ph("c1494", "The team walking at the Golden Gate overlook"),
+  ph("c1910", "Working at a window desk in the San Francisco office"),
+  ph("c1531", "Working on a laptop under a tree in a San Francisco park"),
+  ph("c1519", "The lagoon at the Palace of Fine Arts"),
+  ph("c1919", "At a desk in the San Francisco office"),
+  ph("c1746", "Downtown San Francisco"),
+];
+export const LIFE_B: StripPhoto[] = [
+  ph("c1496", "Talking through an idea at the Golden Gate"),
+  ph("c1912", "Hands on a laptop in the office"),
+  ph("c1534", "A San Francisco park on a clear day"),
+  ph("c1530", "Filming at the Palace of Fine Arts"),
+  ph("c1505", "Above the Golden Gate Bridge"),
+  ph("c1948", "Crossing the street near the office"),
+];
 
 const IA = "https://www.imagine.art";
 export const SURFACES: Surface[] = [

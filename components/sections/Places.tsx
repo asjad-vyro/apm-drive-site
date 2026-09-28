@@ -2,6 +2,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { PLACES } from "@/lib/data/copy";
 import type { Event } from "@/lib/data/facts";
 import { SF_PHOTOS } from "@/lib/data/assets";
+import { InViewVideo } from "@/components/motion/InViewVideo";
 
 /**
  * Islamabad → San Francisco. Two markers on an abstract route board; the
@@ -49,8 +50,7 @@ export function Places({ events, sfAddress }: { events: Event[]; sfAddress: stri
         <figure className="m-0 mt-12 md:mt-16">
           <div className="grid md:grid-cols-[2fr_1fr] gap-3 md:gap-4">
             <Reveal className="h-full">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={SF_PHOTOS.main.src} alt={SF_PHOTOS.main.alt} loading="lazy" decoding="async" className="w-full h-full aspect-[16/10] md:aspect-auto object-cover rounded-[18px] bg-paper-2" />
+              <InViewVideo poster={SF_PHOTOS.main.src} src={SF_PHOTOS.main.video} alt={SF_PHOTOS.main.alt} autoplay className="w-full h-full aspect-[16/10] md:aspect-auto md:min-h-[100%] rounded-[18px] bg-paper-2" />
             </Reveal>
             <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
               {SF_PHOTOS.side.map((p, i) => (

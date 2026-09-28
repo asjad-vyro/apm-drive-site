@@ -85,7 +85,7 @@ export function GenerateReveal({
   }, [armed, start, src, duration]);
 
   return (
-    <div ref={wrapRef} className={`relative overflow-hidden ${className}`}>
+    <div ref={wrapRef} className={`relative overflow-hidden ${className}`} data-gen="" data-src={src} data-video={video} data-focus={focusX} data-duration={duration} data-trigger={trigger}>
       <canvas ref={canvasRef} className="absolute inset-0 block" style={{ opacity: done ? 0 : 1, transition: "opacity 320ms ease" }} aria-hidden="true" />
       <img
         src={src}

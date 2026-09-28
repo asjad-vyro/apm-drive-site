@@ -33,7 +33,7 @@ export function InViewVideo({ poster, src, alt, className = "", autoplay = false
   }, [src, autoplay]);
 
   return (
-    <div ref={ref} className={`relative overflow-hidden ${className}`}>
+    <div ref={ref} className={`relative overflow-hidden ${className}`} data-ivv="" data-src={src} data-autoplay={autoplay ? "true" : undefined}>
       <img src={poster} alt={alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
       {src && armed && (
         <video

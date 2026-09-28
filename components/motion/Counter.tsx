@@ -21,5 +21,5 @@ export function Counter({ value, decimals = 0, className = "", duration = 1.6 }:
     return () => { tw.scrollTrigger?.kill(); tw.kill(); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, decimals, duration]);
-  return <span ref={ref} className={`t-num ${className}`}>{format(0)}</span>;
+  return <span ref={ref} className={`t-num ${className}`} data-count={value} data-decimals={decimals}>{format(0)}</span>;
 }

@@ -69,3 +69,28 @@ Verification done on 2026-09-25: scrolling screenshots at 1440 and 390, zero bro
 ## Candidate-facing copy rule
 
 The page is public. It never names target universities or cities, never says "batch" or "drive", never names internal screeners or internal titles, and never describes internal sourcing. The team section lists names only, grouped Product and Design. The role title appears once in the hero and once on the career curve.
+
+## Static HTML/CSS version
+
+`static/` is a framework-free copy of the site: plain `index.html`, one stylesheet, the font, the media, and a small vanilla script. It needs no build step and no server features; it works from any static host, from a sub-path, or opened straight from disk.
+
+```
+static/
+  index.html        rendered markup (no React, no Next.js runtime)
+  css/styles.css    compiled Tailwind stylesheet
+  fonts/            Google Sans Flex
+  js/app.js         vanilla port of the React behaviour (nav, menu, reveals, FAQ, counters, videos, hero reveal, the line)
+  js/gsap.min.js, js/ScrollTrigger.min.js   vendored GSAP (same library the Next build uses)
+  assets/           only the media the page references
+  icon.svg
+```
+
+Regenerate after any change to the Next source:
+
+```
+pnpm build:static
+```
+
+That runs `next build` with `output: "export"`, strips every Next.js script, rewrites paths to relative, and copies in `scripts/static/app.js`. Edit behaviour in `scripts/static/app.js`, not in `static/js/`, which is overwritten on each build.
+
+Verified 2026-09-28 against the Next.js build: identical page height and under 0.02% differing pixels on every screen at 1440 and 390 wide; the line is drawn to the same point at 25/50/75% scroll; counters, reveals, hero reveal and loop, the SF loop, hover videos, FAQ, mobile menu and scrolled nav all behave identically; zero console errors over http and file://.

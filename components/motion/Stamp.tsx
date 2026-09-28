@@ -16,5 +16,5 @@ export function Stamp({ children, className = "" }: { children: ReactNode; class
     items.forEach((i) => io.observe(i));
     return () => io.disconnect();
   }, []);
-  return <div ref={ref} className={className}>{children}</div>;
+  return <div ref={ref} className={className} data-stamp-root="">{children}</div>;
 }

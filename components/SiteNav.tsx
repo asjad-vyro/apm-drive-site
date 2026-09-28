@@ -32,7 +32,7 @@ export function SiteNav() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[60]" style={{ padding: scrolled ? "10px 16px" : "16px", transition: "padding 0.3s ease" }}>
+      <header id="site-nav" className="fixed top-0 left-0 right-0 z-[60]" style={{ padding: scrolled ? "10px 16px" : "16px", transition: "padding 0.3s ease" }}>
         <div
           className="mx-auto flex items-center justify-between"
           style={{
@@ -63,7 +63,7 @@ export function SiteNav() {
             </a>
           </div>
 
-          <button onClick={() => setMenuOpen((o) => !o)} className="lg:hidden flex items-center justify-center w-[38px] h-[38px] rounded-[10px] border-none cursor-pointer bg-transparent text-ink" aria-label={menuOpen ? "Close menu" : "Open menu"}>
+          <button data-menu-toggle="" onClick={() => setMenuOpen((o) => !o)} className="lg:hidden flex items-center justify-center w-[38px] h-[38px] rounded-[10px] border-none cursor-pointer bg-transparent text-ink" aria-label={menuOpen ? "Close menu" : "Open menu"}>
             <span className="flex flex-col gap-[5px]">
               <span className="block w-[18px] h-[1.5px] rounded-sm bg-current transition-transform duration-[250ms]" style={{ transform: menuOpen ? "translateY(3.25px) rotate(45deg)" : "none" }} />
               <span className="block w-[18px] h-[1.5px] rounded-sm bg-current transition-transform duration-[250ms]" style={{ transform: menuOpen ? "translateY(-3.25px) rotate(-45deg)" : "none" }} />
@@ -72,22 +72,23 @@ export function SiteNav() {
         </div>
       </header>
 
-      {menuOpen && (
-        <div className="fixed inset-0 z-[101] bg-paper flex flex-col" style={{ animation: "mobileMenuIn 0.22s cubic-bezier(0.4,0,0.2,1) forwards" }}>
+      {/* Always in the markup (hidden until opened) so the static build carries it too. */}
+      {(
+        <div id="mobile-menu" hidden={!menuOpen} className="fixed inset-0 z-[101] bg-paper flex flex-col" style={{ animation: "mobileMenuIn 0.22s cubic-bezier(0.4,0,0.2,1) forwards" }}>
           <div className="flex items-center justify-between px-6 py-[18px] shrink-0">
-            <a href="#top" onClick={() => setMenuOpen(false)} className="inline-flex items-center" aria-label="Back to top"><Wordmark /></a>
-            <button onClick={() => setMenuOpen(false)} className="flex items-center justify-center p-1 border-none bg-transparent cursor-pointer text-ink-3" aria-label="Close menu">
+            <a href="#top" data-menu-close="" onClick={() => setMenuOpen(false)} className="inline-flex items-center" aria-label="Back to top"><Wordmark /></a>
+            <button data-menu-close="" onClick={() => setMenuOpen(false)} className="flex items-center justify-center p-1 border-none bg-transparent cursor-pointer text-ink-3" aria-label="Close menu">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3l12 12M15 3L3 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
             </button>
           </div>
           <div className="flex-1 flex flex-col items-center justify-center pb-10">
             <div className="flex flex-col items-center gap-1">
               {NAV_LINKS.map((l) => (
-                <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="block text-center px-8 py-2.5 rounded-[10px] font-sans text-[26px] font-light tracking-[-0.3px] text-ink-2">{l.label}</a>
+                <a key={l.href} href={l.href} data-menu-close="" onClick={() => setMenuOpen(false)} className="block text-center px-8 py-2.5 rounded-[10px] font-sans text-[26px] font-light tracking-[-0.3px] text-ink-2">{l.label}</a>
               ))}
             </div>
             <div className="w-[calc(100%-48px)] h-px bg-line my-4" />
-            <a href={SITE.applyUrl} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="bg-ink text-paper inline-flex items-center justify-center h-11 px-6 rounded-[22px] font-sans text-[14px] font-medium">Apply</a>
+            <a href={SITE.applyUrl} target="_blank" rel="noopener noreferrer" data-menu-close="" onClick={() => setMenuOpen(false)} className="bg-ink text-paper inline-flex items-center justify-center h-11 px-6 rounded-[22px] font-sans text-[14px] font-medium">Apply</a>
           </div>
         </div>
       )}

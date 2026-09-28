@@ -18,7 +18,7 @@ function FaqCard({ q, a, delay }: Item & { delay: number }) {
   return (
     <Reveal delay={delay}>
       <div className="rounded-[12px] bg-white border border-line">
-        <button onClick={() => setOpen((v) => !v)} className="w-full flex items-start justify-between gap-6 px-6 py-5 text-left cursor-pointer bg-transparent border-0" aria-expanded={open}>
+        <button data-faq="" onClick={() => setOpen((v) => !v)} className="w-full flex items-start justify-between gap-6 px-6 py-5 text-left cursor-pointer bg-transparent border-0" aria-expanded={open}>
           <span className="font-sans font-medium text-[16px] leading-[1.4] text-ink">{q}</span>
           <PlusToggle open={open} />
         </button>

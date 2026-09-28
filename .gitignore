@@ -8,3 +8,4 @@ scripts/shots
 .vercel
 .env*
 tsconfig.tsbuildinfo
+/out

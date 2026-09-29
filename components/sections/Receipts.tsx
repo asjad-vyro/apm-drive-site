@@ -16,12 +16,12 @@ export function Receipts({ facts }: { facts: Fact[] }) {
           As published on{" "}
           <a className="underline decoration-line-2 underline-offset-2 hover:text-signal" href={facts[0].source} target="_blank" rel="noopener noreferrer">imagine.art/about</a>, Sep 2026
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 md:gap-y-10">
           {facts.map((f, i) => (
             <Reveal key={f.label} delay={i * 60} className="h-full">
-              <div className="relative h-full pl-6 md:pl-0 md:pb-9">
+              <div className="relative h-full pl-6 md:pl-0 lg:pb-9">
                 <span data-line={`receipt-m-${i}`} className="anchor-dot absolute left-[-12px] top-[18px] md:hidden" aria-hidden="true" />
-                <span data-line={`receipt-${i}`} className="anchor-dot absolute left-0 bottom-0 hidden md:block" aria-hidden="true" />
+                <span data-line={`receipt-${i}`} className="anchor-dot absolute left-0 bottom-0 hidden lg:block" aria-hidden="true" />
                 <div className="t-display-sm text-ink t-num">
                   {f.prefix}<Counter value={f.value} decimals={f.decimals} />{f.suffix}
                 </div>

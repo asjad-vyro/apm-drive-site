@@ -26,10 +26,10 @@ export function Mentions({ mentions }: { mentions: Mention[] }) {
         </div>
       )}
       <div className="container-page mt-10 md:mt-14">
-        <ul className="list-none m-0 p-0 grid md:grid-cols-2 gap-x-10">
+        <ul className="list-none m-0 p-0 grid lg:grid-cols-2 gap-x-10">
           {mentions.map((m) => (
             <li key={m.url} className="hairline py-4">
-              <a href={m.url} target="_blank" rel="noopener noreferrer" className="group grid grid-cols-[110px_1fr] md:grid-cols-[150px_1fr] gap-4 items-baseline">
+              <a href={m.url} target="_blank" rel="noopener noreferrer" className="group grid grid-cols-1 sm:grid-cols-[150px_1fr] gap-1 sm:gap-4 items-baseline">
                 <span className="t-mono text-ink-3 truncate">{m.outlet}</span>
                 <span className="text-[15px] leading-[1.45] text-ink group-hover:text-signal transition-colors">{m.headline}{m.date && <span className="text-ink-4 text-[12px] ml-2 whitespace-nowrap">{m.date}</span>}</span>
               </a>

@@ -23,8 +23,8 @@ export function Growth({ milestones }: { milestones: Milestone[] }) {
 
         {/* 1. Role curve — desktop: chart; mobile: stacked list with the same anchors */}
         <div className="mt-12 md:mt-16 relative">
-          <span data-line="growth-in" className="absolute left-[-24px] top-0 w-1 h-1 hidden md:block" aria-hidden="true" />
-          <div className="hidden md:block relative h-[420px] rounded-[24px] border border-line bg-white/50">
+          <span data-line="growth-in" className="absolute left-[-24px] top-0 w-1 h-1 hidden lg:block" aria-hidden="true" />
+          <div className="hidden lg:block relative h-[420px] rounded-[24px] border border-line bg-white/50">
             {/* faint grid */}
             <div className="absolute inset-0 rounded-[24px] overflow-hidden" aria-hidden="true">
               {[20, 40, 60, 80].map((p) => (<div key={p} className="absolute left-0 right-0 border-t border-line" style={{ top: `${p}%` }} />))}
@@ -43,7 +43,7 @@ export function Growth({ milestones }: { milestones: Milestone[] }) {
             ))}
             <span data-line="ladder-exit" className="absolute right-[6%] bottom-[8%] w-1 h-1" aria-hidden="true" />
           </div>
-          <ol className="md:hidden list-none m-0 p-0 flex flex-col gap-6 relative pl-6">
+          <ol className="lg:hidden list-none m-0 p-0 flex flex-col gap-6 relative pl-6 max-w-[640px]">
             {LADDER.map((l, i) => (
               <li key={l.title} className="relative">
                 <span data-line={`ladder-m-${i}`} className="anchor-dot absolute left-[-36px] top-[6px]" aria-hidden="true" />
@@ -63,8 +63,8 @@ export function Growth({ milestones }: { milestones: Milestone[] }) {
           </Reveal>
           <ol className="list-none m-0 p-0 flex flex-col relative">
             {SCOPE.map((s, i) => (
-              <li key={s.when} className="relative grid grid-cols-[96px_1fr] md:grid-cols-[140px_1fr] gap-4 py-5 hairline first:border-t-0">
-                <span data-line={`scope-${i}`} className="anchor-dot absolute left-[-12px] md:left-[-28px] top-[50%] mt-[-5px]" aria-hidden="true" />
+              <li key={s.when} className="relative grid grid-cols-[72px_1fr] md:grid-cols-[140px_1fr] gap-3 md:gap-4 py-5 pl-4 md:pl-0 hairline first:border-t-0">
+                <span data-line={`scope-${i}`} className="anchor-dot absolute left-[-6px] md:left-[-28px] top-[50%] mt-[-5px]" aria-hidden="true" />
                 <div className="t-mono text-ink-3 pt-[3px]">{s.when}</div>
                 <p className="m-0 text-[16px] md:text-[17px] leading-[1.5] text-ink">{s.what}</p>
               </li>
@@ -82,8 +82,8 @@ export function Growth({ milestones }: { milestones: Milestone[] }) {
             </Reveal>
             <ol className="list-none m-0 p-0 flex flex-col relative">
               {milestones.map((m, i) => (
-                <li key={`${m.when}-${m.label}`} className="relative grid grid-cols-[96px_1fr] md:grid-cols-[140px_1fr] gap-4 py-5 hairline first:border-t-0">
-                  <span data-line={`mile-${i}`} className="anchor-dot absolute left-[-12px] md:left-[-28px] top-[50%] mt-[-5px]" aria-hidden="true" />
+                <li key={`${m.when}-${m.label}`} className="relative grid grid-cols-[72px_1fr] md:grid-cols-[140px_1fr] gap-3 md:gap-4 py-5 pl-4 md:pl-0 hairline first:border-t-0">
+                  <span data-line={`mile-${i}`} className="anchor-dot absolute left-[-6px] md:left-[-28px] top-[50%] mt-[-5px]" aria-hidden="true" />
                   <div className="t-h3 t-num text-ink leading-none pt-1">{m.when}</div>
                   <p className="m-0 text-[16px] md:text-[17px] leading-[1.5] text-ink pt-1">
                     {m.label} <a href={m.source} target="_blank" rel="noopener noreferrer" className="text-ink-4 hover:text-signal text-[13px] whitespace-nowrap">source ↗</a>

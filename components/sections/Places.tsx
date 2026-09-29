@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { PLACES } from "@/lib/data/copy";
 import type { Event } from "@/lib/data/facts";
-import { SF_PHOTOS } from "@/lib/data/assets";
+import { SF_PHOTOS, ISB_PHOTOS } from "@/lib/data/assets";
 import { InViewVideo } from "@/components/motion/InViewVideo";
 
 /**
@@ -46,6 +46,30 @@ export function Places({ events, sfAddress }: { events: Event[]; sfAddress: stri
           <span data-line="sf-exit" className="absolute right-[8%] top-[22px] w-1 h-1" />
           <span data-line="places-return" className="absolute left-[-24px] top-[22px] w-1 h-1" />
         </div>
+
+        <figure className="m-0 mt-12 md:mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4">
+            <Reveal className="col-span-2 md:col-span-4 md:row-span-2 h-full">
+              <div className="relative overflow-hidden w-full h-full aspect-[16/10] md:aspect-auto md:min-h-[100%] rounded-[18px] bg-paper-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={ISB_PHOTOS.main.src} alt={ISB_PHOTOS.main.alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+            </Reveal>
+            {ISB_PHOTOS.side.map((p, i) => (
+              <Reveal key={p.src} delay={80 + i * 60} className="md:col-span-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="w-full aspect-[16/10] object-cover rounded-[18px] bg-paper-2" />
+              </Reveal>
+            ))}
+            {ISB_PHOTOS.bottom.map((p, i) => (
+              <Reveal key={p.src} delay={200 + i * 60} className="md:col-span-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="w-full aspect-[16/10] md:aspect-[16/9] object-cover rounded-[18px] bg-paper-2" />
+              </Reveal>
+            ))}
+          </div>
+          <figcaption className="mt-3 text-[13px] text-ink-3">The Islamabad office, where the product team works.</figcaption>
+        </figure>
 
         <figure className="m-0 mt-12 md:mt-16">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4">

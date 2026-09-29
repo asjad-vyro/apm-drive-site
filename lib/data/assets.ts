@@ -21,6 +21,19 @@ export const SF_PHOTOS = {
   ],
 };
 
+/** The Islamabad office, from the product team's own photo shoot. */
+export const ISB_PHOTOS = {
+  main: { src: "/assets/pk/team-discussion.webp", alt: "The product team talking through an idea in the Islamabad office" },
+  side: [
+    { src: "/assets/pk/code-review.webp", alt: "Reviewing work together at a monitor" },
+    { src: "/assets/pk/pairing.webp", alt: "Two teammates working side by side" },
+  ],
+  bottom: [
+    { src: "/assets/pk/office-evening.webp", alt: "The Islamabad office in the evening" },
+    { src: "/assets/pk/focus.webp", alt: "Heads down on a laptop" },
+  ],
+};
+
 const ph = (id: string, alt: string): StripPhoto => ({ src: `/assets/life/${id}.webp`, alt, w: 960, h: 540 });
 
 /** Candid frames from the same San Francisco shoots, in one drifting strip. */

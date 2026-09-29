@@ -13,7 +13,8 @@ import { Fit } from "@/components/sections/Fit";
 import { ApplyForm } from "@/components/sections/ApplyForm";
 import { FAQ } from "@/lib/data/copy";
 import { RECEIPTS, MENTIONS, MILESTONES, EVENTS, SF_ADDRESS } from "@/lib/data/facts";
-import { SURFACES, HERO_IMAGE, HERO_VIDEO, LIFE_A } from "@/lib/data/assets";
+import { SURFACES, HERO_IMAGE, HERO_VIDEO, LIFE_A, PEOPLE_ROW } from "@/lib/data/assets";
+import { PeopleRow } from "@/components/sections/PeopleRow";
 import { PhotoStrip } from "@/components/sections/PhotoStrip";
 
 /**
@@ -27,10 +28,11 @@ export default function Page() {
       <main id="page-root" className="relative">
         <LineSystem rootId="page-root" />
         <Hero image={HERO_IMAGE} video={HERO_VIDEO} />
+        <PeopleRow photos={PEOPLE_ROW} caption="The team behind it, in Islamabad and San Francisco." />
         <Receipts facts={RECEIPTS} />
+        <PhotoStrip photos={LIFE_A} />
         <Ship surfaces={SURFACES} />
         <Growth milestones={MILESTONES} />
-        <PhotoStrip photos={LIFE_A} />
         <Mentions mentions={MENTIONS} />
         <How />
         <Places events={EVENTS} sfAddress={SF_ADDRESS} />

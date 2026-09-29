@@ -28,10 +28,7 @@ export const ISB_PHOTOS = {
     { src: "/assets/pk/code-review.webp", alt: "Reviewing work together at a monitor" },
     { src: "/assets/pk/pairing.webp", alt: "Two teammates working side by side" },
   ],
-  bottom: [
-    { src: "/assets/pk/office-evening.webp", alt: "The Islamabad office in the evening" },
-    { src: "/assets/pk/focus.webp", alt: "Heads down on a laptop" },
-  ],
+  bottom: [] as { src: string; alt: string }[],
 };
 
 const ph = (id: string, alt: string): StripPhoto => ({ src: `/assets/life/${id}.webp`, alt, w: 960, h: 540 });
@@ -39,11 +36,28 @@ const ph = (id: string, alt: string): StripPhoto => ({ src: `/assets/life/${id}.
 /** Candid frames from the same San Francisco shoots, in one drifting strip. */
 export const LIFE_A: StripPhoto[] = [
   ph("c1910", "Working at a window desk in the San Francisco office"),
+  { src: "/assets/pk/laptop.webp", alt: "Working on a laptop in the Islamabad office", w: 1000, h: 750 },
   ph("c1534", "A San Francisco park on a clear day"),
-  ph("c1912", "Hands on a laptop in the office"),
-  ph("c1519", "The lagoon at the Palace of Fine Arts"),
   ph("c1919", "At a desk in the San Francisco office"),
+  { src: "/assets/pk/office-evening.webp", alt: "The Islamabad office in the evening", w: 1000, h: 750 },
+  ph("c1519", "The lagoon at the Palace of Fine Arts"),
+  { src: "/assets/pk/deep-work.webp", alt: "Heads down in the Islamabad office", w: 1000, h: 750 },
+  ph("c1912", "Hands on a laptop in the office"),
   ph("c1746", "Downtown San Francisco"),
+];
+
+/** People, right under the hero: the first thing after the headline. */
+export const PEOPLE_ROW = [
+  { src: "/assets/pk/sofa-listening.webp", alt: "The team listening in during a discussion in the Islamabad office" },
+  { src: "/assets/life/c1494.webp", alt: "The team walking at the Golden Gate overlook" },
+  { src: "/assets/pk/thinking.webp", alt: "Thinking through a problem in the Islamabad office" },
+  { src: "/assets/life/c1505.webp", alt: "Above the Golden Gate Bridge" },
+];
+
+/** Beside the product principles. */
+export const HOW_PHOTOS = [
+  { src: "/assets/pk/desk-row.webp", alt: "A row of desks in the Islamabad office" },
+  { src: "/assets/pk/focus.webp", alt: "Heads down on a laptop" },
 ];
 
 const IA = "https://www.imagine.art";

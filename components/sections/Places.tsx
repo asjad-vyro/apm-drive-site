@@ -61,7 +61,7 @@ export function Places({ events, sfAddress }: { events: Event[]; sfAddress: stri
                 <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="w-full aspect-[16/10] object-cover rounded-[18px] bg-paper-2" />
               </Reveal>
             ))}
-            {ISB_PHOTOS.bottom.map((p, i) => (
+            {ISB_PHOTOS.bottom.map((p: { src: string; alt: string }, i: number) => (
               <Reveal key={p.src} delay={200 + i * 60} className="md:col-span-3">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="w-full aspect-[16/10] md:aspect-[16/9] object-cover rounded-[18px] bg-paper-2" />

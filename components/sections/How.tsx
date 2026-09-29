@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { HOW } from "@/lib/data/copy";
+import { HOW_PHOTOS } from "@/lib/data/assets";
 
 export function How() {
   return (
@@ -10,6 +11,14 @@ export function How() {
           <div className="t-mono text-ink-3">{HOW.eyebrow}</div>
           <h2 className="t-h2 mt-4 max-w-[20ch] text-ink">{HOW.title}</h2>
         </Reveal>
+        <div className="mt-10 md:mt-12 grid grid-cols-2 gap-3 md:gap-4">
+          {HOW_PHOTOS.map((p, i) => (
+            <Reveal key={p.src} delay={i * 70}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="w-full aspect-[16/10] md:aspect-[21/9] object-cover rounded-[18px] bg-paper-2" />
+            </Reveal>
+          ))}
+        </div>
         <ol className="list-none m-0 p-0 mt-10 md:mt-14 grid md:grid-cols-2 gap-x-14">
           {HOW.items.map((it, i) => (
             <li key={it.n} className="hairline py-6 md:py-7 grid grid-cols-[52px_1fr] md:grid-cols-[64px_1fr] gap-4">

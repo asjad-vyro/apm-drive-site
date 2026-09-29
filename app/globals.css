@@ -60,8 +60,8 @@
 }
 
 @layer utilities {
-  .container-page { max-width: 1240px; margin: 0 auto; padding: 0 32px; position: relative; }
-  @media (max-width: 768px) { .container-page { padding: 0 20px; } }
+  .container-page { max-width: 1240px; margin-left: auto; margin-right: auto; padding-left: 32px; padding-right: 32px; position: relative; }
+  @media (max-width: 768px) { .container-page { padding-left: 20px; padding-right: 20px; } }
 
   /* Display sizes — clamp() so the same markup holds at 390 and 1440. */
   .t-display { font-size: clamp(40px, 7.2vw, 96px); line-height: 0.98; letter-spacing: -0.035em; font-weight: 500; }

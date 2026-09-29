@@ -28,7 +28,7 @@ export function PhotoStrip({ photos, caption }: { photos: StripPhoto[]; caption?
           ))}
         </div>
       </div>
-      {caption && <p className="container-page mt-4 text-[13px] text-ink-3 m-0">{caption}</p>}
+      {caption && <p className="container-page mt-4 mb-0 text-[13px] text-ink-3">{caption}</p>}
     </section>
   );
 }

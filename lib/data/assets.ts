@@ -38,7 +38,6 @@ export const LIFE_A: StripPhoto[] = [
   ph("c1910", "Working at a window desk in the San Francisco office"),
   { src: "/assets/pk/laptop.webp", alt: "Working on a laptop in the Islamabad office", w: 1000, h: 750 },
   ph("c1534", "A San Francisco park on a clear day"),
-  ph("c1919", "At a desk in the San Francisco office"),
   { src: "/assets/pk/office-evening.webp", alt: "The Islamabad office in the evening", w: 1000, h: 750 },
   ph("c1519", "The lagoon at the Palace of Fine Arts"),
   { src: "/assets/pk/deep-work.webp", alt: "Heads down in the Islamabad office", w: 1000, h: 750 },

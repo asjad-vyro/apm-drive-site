@@ -58,7 +58,7 @@ export const PLACES = {
 };
 
 export const FIT = {
-  eyebrow: "Read this before you apply",
+  eyebrow: "Who we want to work with",
   yes: [
     "You have built something nobody asked you to build.",
     "You would rather ship a rough version this week than a perfect one next quarter.",
@@ -70,6 +70,19 @@ export const FIT = {
     "You want to be told what to build.",
     "You think product means writing tickets.",
     "You are waiting for a manager to notice you.",
+  ],
+};
+
+// TODO(marketing): confirm the four commitments with product leadership before the domain goes live.
+export const COMMITMENT = {
+  eyebrow: "Read this before you apply",
+  title: "Running a global product is not easy.",
+  body: "You are signing up for a journey. You will work alongside some of the best talent in Pakistan, on the hardest problems we have: the ones nobody has solved yet. The product is used by millions of people around the world, and their problems don't wait for a convenient time.",
+  items: [
+    { t: "Full-time, in the room.", b: "Once you join, this is your job, not a side role. You work from the Islamabad office with the people building the product." },
+    { t: "You own it until it's resolved.", b: "Not until your part is done. When something breaks, you stay with it, you find the cause, and you close it." },
+    { t: "A global clock.", b: "Our users, and part of our team, are in other time zones. Some launches and some days run long, and you plan for that." },
+    { t: "Hard on purpose.", b: "Expect high standards, direct feedback and a first year that stretches you. That stretch is how people grow fast here." },
   ],
 };
 

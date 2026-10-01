@@ -10,6 +10,7 @@ import { Mentions } from "@/components/sections/Mentions";
 import { How } from "@/components/sections/How";
 import { Places } from "@/components/sections/Places";
 import { Fit } from "@/components/sections/Fit";
+import { Commitment } from "@/components/sections/Commitment";
 import { ApplyForm } from "@/components/sections/ApplyForm";
 import { FAQ } from "@/lib/data/copy";
 import { RECEIPTS, MENTIONS, MILESTONES, EVENTS, SF_ADDRESS } from "@/lib/data/facts";
@@ -32,6 +33,7 @@ export default function Page() {
         <Receipts facts={RECEIPTS} />
         <PhotoStrip photos={LIFE_A} />
         <Ship surfaces={SURFACES} />
+        <Commitment />
         <Growth milestones={MILESTONES} />
         <Mentions mentions={MENTIONS} />
         <How />
